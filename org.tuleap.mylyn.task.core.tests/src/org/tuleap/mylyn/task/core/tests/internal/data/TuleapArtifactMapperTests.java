@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.tuleap.mylyn.task.core.tests.internal.data;
 
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
+
 import com.google.common.collect.Lists;
 
 import java.text.ParseException;
@@ -61,9 +64,6 @@ import org.tuleap.mylyn.task.core.internal.repository.TuleapAttributeMapper;
 import org.tuleap.mylyn.task.core.internal.util.ITuleapConstants;
 import org.tuleap.mylyn.task.core.internal.util.TuleapCoreKeys;
 import org.tuleap.mylyn.task.core.internal.util.TuleapCoreMessages;
-
-import static org.hamcrest.Matchers.instanceOf;
-import static org.hamcrest.Matchers.is;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -415,8 +415,8 @@ public class TuleapArtifactMapperTests {
 
 		mapper.addAttachment("First field", attachment);
 
-		TaskAttribute att = taskData.getRoot().getMappedAttribute(
-				TaskAttribute.PREFIX_ATTACHMENT + "First field" + "---" + "id");
+		TaskAttribute att = taskData.getRoot().getMappedAttribute(TaskAttribute.PREFIX_ATTACHMENT
+				+ "First field" + "---" + "id");
 		assertNotNull(att);
 
 		TaskAttribute authorAttribute = att.getMappedAttribute(TaskAttribute.ATTACHMENT_AUTHOR);
@@ -600,8 +600,8 @@ public class TuleapArtifactMapperTests {
 		assertEquals(lbl, att.getOption("2")); //$NON-NLS-1$
 		lbl = getLabelFromId(3);
 		assertEquals(lbl, att.getOption("3")); //$NON-NLS-1$
-		assertEquals(
-				"None", att.getOption(String.valueOf(ITuleapConstants.CONFIGURABLE_FIELD_NONE_BINDING_ID))); //$NON-NLS-1$
+		assertEquals("None", att.getOption(String.valueOf( //$NON-NLS-1$
+				ITuleapConstants.CONFIGURABLE_FIELD_NONE_BINDING_ID)));
 	}
 
 	/**
@@ -770,10 +770,10 @@ public class TuleapArtifactMapperTests {
 		assertEquals(statusOpen0, mapper.getStatusAsInt());
 		assertNull(mapper.getCompletionDate());
 		assertEquals(2, taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOptions().size());
-		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(
-				String.valueOf(statusOpen1)));
-		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(
-				String.valueOf(statusOpen0)));
+		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(String.valueOf(
+				statusOpen1)));
+		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(String.valueOf(
+				statusOpen0)));
 
 		// go to closed state, completion date must be non-null
 		mapper.setStatus(statusOpen1);
@@ -783,10 +783,10 @@ public class TuleapArtifactMapperTests {
 		assertEquals(statusOpen1, mapper.getStatusAsInt());
 		assertNull(mapper.getCompletionDate());
 		assertEquals(2, taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOptions().size());
-		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(
-				String.valueOf(statusOpen1)));
-		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(
-				String.valueOf(statusClosed2)));
+		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(String.valueOf(
+				statusOpen1)));
+		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(String.valueOf(
+				statusClosed2)));
 
 		// go to closed state, completion date must be non-null
 		mapper.setStatus(statusClosed2);
@@ -796,10 +796,10 @@ public class TuleapArtifactMapperTests {
 		assertEquals(statusClosed2, mapper.getStatusAsInt());
 		assertNotNull(mapper.getCompletionDate());
 		assertEquals(3, taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOptions().size());
-		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(
-				String.valueOf(statusOpen1)));
-		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(
-				String.valueOf(statusClosed2)));
+		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(String.valueOf(
+				statusOpen1)));
+		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption(String.valueOf(
+				statusClosed2)));
 		assertNotNull(taskData.getRoot().getAttribute(TaskAttribute.STATUS).getOption("3")); //$NON-NLS-1$
 
 		// Back to open, completion date must be null
@@ -921,8 +921,8 @@ public class TuleapArtifactMapperTests {
 		mapper.initializeEmptyTaskData();
 
 		// Populate the task data
-		this.taskData.getRoot().getMappedAttribute(TaskAttribute.USER_ASSIGNED).setValues(
-				Arrays.asList("0", "2"));
+		this.taskData.getRoot().getMappedAttribute(TaskAttribute.USER_ASSIGNED).setValues(Arrays.asList("0",
+				"2"));
 
 		// Tests the value of all the fields
 		List<AbstractFieldValue> fieldValues = this.mapper.getFieldValues();
@@ -1096,8 +1096,8 @@ public class TuleapArtifactMapperTests {
 		mapper.initializeEmptyTaskData();
 
 		// Populate the task data
-		this.taskData.getRoot().getMappedAttribute(String.valueOf(5)).setValues(
-				Arrays.asList("123", "124", "126"));
+		this.taskData.getRoot().getMappedAttribute(String.valueOf(5)).setValues(Arrays.asList("123", "124",
+				"126"));
 
 		// Tests the value of all the fields
 		List<AbstractFieldValue> fieldValues = this.mapper.getFieldValues();
@@ -1127,8 +1127,8 @@ public class TuleapArtifactMapperTests {
 
 		// Populate the task data
 		// Old fashion
-		this.taskData.getRoot().getMappedAttribute(String.valueOf(11)).setValues(
-				Arrays.asList("123", "456", "789"));
+		this.taskData.getRoot().getMappedAttribute(String.valueOf(11)).setValues(Arrays.asList("123", "456",
+				"789"));
 
 		// Tests the value of all the fields
 		List<AbstractFieldValue> fieldValues = this.mapper.getFieldValues();

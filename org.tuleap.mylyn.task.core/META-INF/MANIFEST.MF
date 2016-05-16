@@ -10,11 +10,9 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mylyn.commons.net,
  org.eclipse.mylyn.tasks.core,
- org.apache.commons.discovery,
  org.apache.commons.codec;bundle-version="1.6.0",
- javax.activation,
  com.google.gson;bundle-version="2.1.0",
- com.google.guava;bundle-version="[11.0.0,12.0.0)"
+ com.google.guava;bundle-version="0.0.0"
 Export-Package: org.tuleap.mylyn.task.core.internal;version="2.0.0";x-friends:="org.tuleap.mylyn.task.core.tests",
  org.tuleap.mylyn.task.core.internal.client;version="2.0.0";x-friends:="org.tuleap.mylyn.task.core.tests,org.tuleap.mylyn.task.ui",
  org.tuleap.mylyn.task.core.internal.client.rest;version="2.0.0";x-friends:="org.tuleap.mylyn.task.ui",
