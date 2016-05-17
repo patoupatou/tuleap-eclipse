@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Neon target" sequenceNumber="56">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.mylyn.commons.feature.group" version="3.19.0.v20160316-2122"/>
+<unit id="org.eclipse.mylyn.sdk_feature.feature.group" version="3.19.0.v20160331-1842"/>
+<repository location="http://download.eclipse.org/mylyn/releases/latest"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.hamcrest" version="1.1.0.v20090501071000"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/repository/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sdk.ide" version="4.5.2.M20160212-1500"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.5/"/>
+</location>
+</locations>
+</target>
